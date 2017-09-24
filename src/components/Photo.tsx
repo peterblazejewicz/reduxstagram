@@ -1,15 +1,7 @@
 import React, { SFC } from 'react';
 import { Link } from 'react-router-dom';
-import { Post, Comments } from '../types/index';
+import { PhotoProps } from '../types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { IncrementLikes } from '../actions';
-
-interface PhotoProps {
-  index: number;
-  post: Post;
-  comments: Comments;
-  increment: (index: number) => IncrementLikes;
-}
 
 const Caption: SFC<PhotoProps> = props => (
   <figcaption>

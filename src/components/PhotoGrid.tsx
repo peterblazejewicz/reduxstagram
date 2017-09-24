@@ -1,14 +1,8 @@
 import React, { SFC } from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { DefaultState, Post, Comments } from '../types';
+import { DefaultState, PhotoProps } from '../types';
 import Photo from './Photo';
 import { increment, IncrementLikes } from '../actions';
-
-interface PhotoProps {
-  posts: Post[];
-  comments: Comments;
-  increment: (index: number) => IncrementLikes;
-}
 
 const PhotoGrid: SFC<PhotoProps> = props => (
   <div className="photo-grid">

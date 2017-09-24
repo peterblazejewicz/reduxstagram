@@ -15,7 +15,7 @@ ReactDOM.render(
       <div>
         <Route path="/" component={Main} />
         <Route exact={true} path="/" component={PhotoGrid} />
-        <Route path="/view/:id" component={Single} />
+        <Route path="/view/:code" component={Single} />
       </div>
     </BrowserRouter>
   </Provider>,
