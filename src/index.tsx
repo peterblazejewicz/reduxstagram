@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
 import PhotoGrid from './components/PhotoGrid';
 import Single from './components/Single';
+import store from './store';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,3 +19,7 @@ ReactDOM.render(
   document.getElementById('root')!,
 );
 registerServiceWorker();
+
+const s = store;
+// tslint:disable-next-line:no-console
+console.log(s);
