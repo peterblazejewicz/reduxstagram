@@ -1,7 +1,7 @@
 import { Comments } from './data/comments';
-import { Posts } from './data/posts';
+import { Post } from './data/posts';
 
 export interface DefaultState {
   comments: Comments;
-  posts: Posts[];
+  posts: Post[];
 }

@@ -20,6 +20,7 @@ ReactDOM.render(
 );
 registerServiceWorker();
 
-const s = store;
-// tslint:disable-next-line:no-console
-console.log(s);
+{
+  // tslint:disable-next-line:no-unused-expression
+  store;
+}

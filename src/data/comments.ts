@@ -1,8 +1,9 @@
+export interface Comment {
+  text: string;
+  user: string;
+}
 export interface Comments {
-  [id: string]: {
-    text: string;
-    user: string;
-  }[];
+  [id: string]: Comment[];
 }
 // tslint:disable:quotemark
 // tslint:disable:max-line-length

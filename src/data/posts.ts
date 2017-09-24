@@ -1,4 +1,4 @@
-export interface Posts {
+export interface Post {
   caption: string;
   code: string;
   display_src: string;
@@ -6,7 +6,7 @@ export interface Posts {
   likes: number;
 }
 // tslint:disable:quotemark
-const posts: Posts[] = [
+const posts: Post[] = [
   {
     code: 'BAcyDyQwcXX',
     caption: 'Lunch #hamont',

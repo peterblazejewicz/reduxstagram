@@ -1,15 +1,25 @@
-import { Posts } from '../data/posts';
+import { Post } from '../data/posts';
 import { Action } from 'redux';
 // a posts reducer
 
-interface PostsAction extends Action {
+export interface PostsAction extends Action {
   type: string;
-  payload: Posts[];
+  index: number;
 }
 
-const posts = (state: Posts[] = [], action: PostsAction) => {
+const PostsReducer = (state: Post[] = [], action: PostsAction): Post[] => {
   // tslint:disable-next-line:no-console
-  console.log(state, action);
-  return state;
+  console.log(state, action.type);
+  switch (action.type) {
+    case 'INCREAMENT_LIKES':
+      let post: Post = state[action.index];
+      return [
+        ...state.slice(0, action.index),
+        { ...post, likes: post.likes + 1 },
+        ...state.slice(action.index),
+      ];
+    default:
+      return state;
+  }
 };
-export default posts;
+export default PostsReducer;
