@@ -17,6 +17,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
   "exclude": [

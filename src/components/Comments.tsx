@@ -1,18 +1,14 @@
 import React, { Component, FormEvent } from 'react';
 import { Comment } from '../types/';
 import { SingleProps } from '../types';
+import autobind from 'autobind-decorator';
 
-const Comments = class extends Component<SingleProps, {}> {
+class Comments extends Component<SingleProps, {}> {
   author: HTMLInputElement;
   comment: HTMLInputElement;
   commentForm: HTMLFormElement;
 
-  constructor(props: SingleProps) {
-    super(props);
-    this.renderComment = this.renderComment.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
+  @autobind
   renderComment(comment: Comment, index: number) {
     return (
       <div className="comment" key={index}>
@@ -33,6 +29,8 @@ const Comments = class extends Component<SingleProps, {}> {
       </div>
     );
   }
+
+  @autobind
   handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const { code } = this.props.match.params;
@@ -41,6 +39,7 @@ const Comments = class extends Component<SingleProps, {}> {
     this.props.addComment(code, author, comment);
     this.commentForm.reset();
   }
+
   render() {
     return (
       <div className="comments">
@@ -71,6 +70,6 @@ const Comments = class extends Component<SingleProps, {}> {
       </div>
     );
   }
-};
+}
 
 export default Comments;
