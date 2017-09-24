@@ -7,11 +7,10 @@ const PostsReducer = (state: Post[] = [], action: IncrementLikes): Post[] => {
   // tslint:disable-next-line:no-console
   switch (action.type) {
     case INCREAMENT_LIKES:
-      let post: Post = state[action.index];
       return [
         ...state.slice(0, action.index),
-        { ...post, likes: post.likes + 1 },
-        ...state.slice(action.index),
+        { ...state[action.index], likes: state[action.index].likes + 1 },
+        ...state.slice(action.index + 1),
       ];
     default:
       return state;
