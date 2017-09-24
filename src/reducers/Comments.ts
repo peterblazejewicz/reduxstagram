@@ -26,7 +26,6 @@ const CommentsReducer = (
   action: CommentsAction,
 ): Comments => {
   // tslint:disable-next-line:no-console
-  console.log(state, action);
   if (action.id) {
     return {
       ...state,

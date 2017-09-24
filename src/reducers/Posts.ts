@@ -5,7 +5,6 @@ import { IncrementLikes } from '../actions';
 
 const PostsReducer = (state: Post[] = [], action: IncrementLikes): Post[] => {
   // tslint:disable-next-line:no-console
-  console.log(state, action.type);
   switch (action.type) {
     case INCREAMENT_LIKES:
       let post: Post = state[action.index];
