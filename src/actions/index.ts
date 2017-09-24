@@ -23,7 +23,7 @@ export type CommentsAction = AddComment | RemoveComment;
  * Increaments comments count
  * @param {number} index
  */
-const increament: (index: number) => IncrementLikes = index => ({
+const increment: (index: number) => IncrementLikes = index => ({
   type: constants.INCREAMENT_LIKES,
   index,
 });
@@ -59,4 +59,4 @@ const removeComment: (id: string, index: number) => RemoveComment = (
   index,
 });
 
-export { increament, addComment, removeComment };
+export { increment, addComment, removeComment };
