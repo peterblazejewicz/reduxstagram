@@ -1,17 +1,13 @@
-import { Post } from '../types';
-import { Action } from 'redux';
+import { Post, INCREAMENT_LIKES } from '../types';
+import { IncrementLikes } from '../actions';
+
 // a posts reducer
 
-export interface PostsAction extends Action {
-  type: string;
-  index: number;
-}
-
-const PostsReducer = (state: Post[] = [], action: PostsAction): Post[] => {
+const PostsReducer = (state: Post[] = [], action: IncrementLikes): Post[] => {
   // tslint:disable-next-line:no-console
   console.log(state, action.type);
   switch (action.type) {
-    case 'INCREAMENT_LIKES':
+    case INCREAMENT_LIKES:
       let post: Post = state[action.index];
       return [
         ...state.slice(0, action.index),

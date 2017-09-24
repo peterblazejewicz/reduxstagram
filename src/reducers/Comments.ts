@@ -1,34 +1,22 @@
-import { Comments, Comment } from '../types/';
-import { Action } from 'redux';
+import { Comments, Comment, ADD_COMMENT, REMOVE_COMMENT } from '../types/';
+import { CommentsAction } from '../actions';
 // a posts reducer
-
-export type CommentsAction = AddComment | RemoveComment;
-
-interface CommentsBaseAction extends Action {
-  type: string;
-  postId?: string;
-}
-interface AddComment extends CommentsBaseAction {
-  user: string;
-  text: string;
-}
-interface RemoveComment extends CommentsBaseAction {
-  index: number;
-}
 
 const postComments = (state: Comment[], action: CommentsAction): Comment[] => {
   switch (action.type) {
-    case 'ADD_COMMENT':
+    case ADD_COMMENT:
       return [
         ...state,
         {
-          text: (action as AddComment).text,
-          user: (action as AddComment).user,
+          text: action.comment,
+          user: action.author,
         },
       ];
-    case 'REMOVE_COMMENT':
-      const index = (action as RemoveComment).index;
-      return [...state.slice(0, index), ...state.slice(index + 1)];
+    case REMOVE_COMMENT:
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1),
+      ];
     default:
       return state;
   }
@@ -39,10 +27,10 @@ const CommentsReducer = (
 ): Comments => {
   // tslint:disable-next-line:no-console
   console.log(state, action);
-  if (action.postId) {
+  if (action.id) {
     return {
       ...state,
-      [action.postId]: postComments(state[action.postId], action),
+      [action.id]: postComments(state[action.id], action),
     };
   }
   return state;
