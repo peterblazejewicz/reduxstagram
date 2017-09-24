@@ -1,10 +1,4 @@
-export interface Comment {
-  text: string;
-  user: string;
-}
-export interface Comments {
-  [id: string]: Comment[];
-}
+import { Comments } from '../types';
 // tslint:disable:quotemark
 // tslint:disable:max-line-length
 const comments: Comments = {

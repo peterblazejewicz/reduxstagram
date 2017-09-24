@@ -1,10 +1,5 @@
-export interface Post {
-  caption: string;
-  code: string;
-  display_src: string;
-  id: string;
-  likes: number;
-}
+import { Post } from '../types/';
+
 // tslint:disable:quotemark
 const posts: Post[] = [
   {

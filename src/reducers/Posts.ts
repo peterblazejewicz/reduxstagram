@@ -1,4 +1,4 @@
-import { Post } from '../data/posts';
+import { Post } from '../types';
 import { Action } from 'redux';
 // a posts reducer
 

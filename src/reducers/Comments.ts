@@ -1,4 +1,4 @@
-import { Comments, Comment } from '../data/comments';
+import { Comments, Comment } from '../types/';
 import { Action } from 'redux';
 // a posts reducer
 
