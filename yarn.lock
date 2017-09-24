@@ -14,6 +14,12 @@
   version "8.0.30"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.30.tgz#aa3c42946fc6357737eb215349fe728b38679d05"
 
+"@types/raven@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/raven/-/raven-2.1.2.tgz#f066762a40aa3dd2fa8dbfc046ab4ecaf9bf03a4"
+  dependencies:
+    "@types/node" "*"
+
 "@types/react-dom@^15.5.4":
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.4.tgz#3f75ba86a2ce9a7d1d9e7d1ee3f186f3a9652d8f"
@@ -4411,6 +4417,10 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raven-js@^3.17.0:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.17.0.tgz#779457ac7910512c3c2cc9bb6d0a9eeb59a969ec"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
   version "1.2.1"
